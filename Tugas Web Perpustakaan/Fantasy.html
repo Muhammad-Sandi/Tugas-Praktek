@@ -212,6 +212,12 @@
                 const tglpeminjaman = document.getElementById("id_tglpeminjaman").value;
                 const bataswaktu = document.getElementById("id_bataswaktu").value;
 
+                if (confirm("Apakah anda yakin ingin meminjam buku ini ? Karena anda hanya bisa meminjam 1 buku.")) {
+
+                } else {
+                    tetep_ada
+                }
+
                 const containerHasil = document.getElementById("containerHasil");
                 containerHasil.innerHTML = "";
                 containerHasil.innerHTML = `<div class="card" style="width: 18rem;" >
