@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pilih = confirm("Apakah Anda Ingin Melihat Pengiriman Barang ? Silakan Klik OK Untuk Melanjutkan")
+        
+        var pengirim = prompt('Masukkan Nama Pengirim')
+        document.write('Nama Pengirim :', pengirim, '<br>')
+
+        var penerima = prompt('Masukkan Nama Penerima')
+        document.write('Nama Penerima :', penerima, '<br>')
+
+        var jarak = prompt('Jarak Pengiriman (Masukkan Angka Saja, contoh: 10km ditulis 10')
+        document.write('Jarak Pegiriman :', jarak, 'km<br>')
+
+        var alamat = prompt('Alamat Penerima')
+        document.write('Alamat Penerima :', alamat, '<br>')
+
+        var jenis = prompt('Jenis Barang')
+        document.write('Jenis Barang :', jenis, '<br>')
+
+        var berat = prompt('Berat Barang (Masukkan Angka Saja, contoh: 10kg ditulis 10)')
+        document.write('Berat Barang :', berat, 'kg<br>')
+
+        var biaya_jarak = jarak*10000
+        var diskon1 = 0
+        if (biaya_jarak >= 50000) {
+            diskon1 = biaya_jarak*0.1
+        }else{
+
+        }
+
+        var biaya_berat = berat*5000
+        var diskon2 = 0
+        if (biaya_berat >= 100000) {
+            diskon2 = biaya_berat*0.05
+        }else{ 
+
+        }
+
+        
+        var total_diskon = diskon1 + diskon2;
+        var total_harga = (biaya_jarak + biaya_berat) - total_diskon;
+        document.write('<b> Harga Dari Jarak<b/> =' + biaya_jarak + '<br>')
+        document.write('<b> Harga Dari Berat<b/> =' + biaya_berat + '<br>')
+        document.write('<b> Diskon Dari Jarak</b> =' + diskon1 + '<br>')
+        document.write('<b> Diskon Dari Berat</b> =' + diskon2 + '<br>')
+        document.write('<b> Total Diskon</b> =' + total_diskon + '<br>')
+        document.write('<b> Total Harga</b> =' + total_harga + '<br>')
+    </script>
+</body>
+</html>
