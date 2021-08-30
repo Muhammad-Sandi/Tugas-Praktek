@@ -16,7 +16,7 @@
             height: 100%;
             background-size: cover;
             background-position-y: 666px;
-            
+
         }
 
         .judulist {
@@ -32,29 +32,31 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="Home.html">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Genre
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="index.html">All</a>
-                <a class="dropdown-item" href="Fantasy.html">Fantasy</a>
-                <a class="dropdown-item" href="Horror.html">Horror</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Genre
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">All</a>
+                        <a class="dropdown-item" href="Fantasy.html">Fantasy</a>
+                        <a class="dropdown-item" href="Horror.html">Horror</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
-      </nav><br>
+    </nav><br>
 
     <div class="container">
         <div class="row">
@@ -82,34 +84,28 @@
 
                             <div class="modal-body">
 
-                                <label for="namasiswa">Nama Pembeli</label>
+                                <label for="namapeminjam">Nama Peminjam</label>
                                 <input type="teks" class="form-control" id="id_namasiswa"
-                                    placeholder="Masukkan Nama Anda">
+                                    placeholder="Masukkan Nama Peminjam">
 
-                                <label for="kelas">Metode Pembayaran</label>
-                                <select class="form-control">
-                                    <option value="BCA">BCA</option>
-                                    <option value="MANDIRI">MANDIRI</option>
-                                    <option value="CIMB NIAGA">CIMB NIAGA</option>
-                                    <option value="DANA">DANA</option>
-                                    <option value="OVO">OVO</option>
-                                    <option value="GOPAY">GOPAY</option>
-                                    <option value="Cash On Delivery">Cash On Delivery</option><br>
-                                </select>
+                                <label for="idpeminjam">ID Peminjam</label>
+                                <input type="teks" class="form-control" id="id_id" placeholder="Masukkan ID Peminjam">
 
                                 <label for="alamat">Alamat</label>
-                                <textarea class="form-control" id="id_alamat" placeholder="Masukkan Alamat Anda"
+                                <textarea class="form-control" id="id_alamat" placeholder="Masukkan Alamat Peminjam"
                                     rows="3"></textarea>
 
-                                <label for="namasiswa">No Hp</label>
-                                <input type="number" class="form-control" id="id_nohp"
-                                    placeholder="Masukkan No Hp Anda">
+                                <label for="tglpeminjaman">Tanggal Peminjaman</label>
+                                <input type="date" class="form-control" id="id_tglpeminjaman">
+
+                                <label for="bataswaktu">Batas Waktu</label>
+                                <input type="date" class="form-control" id="id_bataswaktu">
 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary"
-                                    onclick="selesaibayar(' + i + ')">Selesaikan Pembayaran</button>
+                                    onclick="selesaibayar(' + i + ')">Pinjam</button>
                             </div>
                         </div>
                     </div>
@@ -126,7 +122,7 @@
     <script>
         var namabarang = ['Final Girl Support Group', 'The Book of Accident', 'What We Devour (Linsey)', 'The River Has Teeth', 'A Touch of Jen (Beth)',]
         var gambarbarang = [
-        'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1614275199l/55829194.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606934104l/55782435.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613747072l/45184284.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1602075767l/54426630._SY475_.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620709975l/55867897.jpg',
+            'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1614275199l/55829194.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1606934104l/55782435.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1613747072l/45184284.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1602075767l/54426630._SY475_.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1620709975l/55867897.jpg',
         ]
 
         var listproduk = document.getElementById('listproduk')
@@ -155,11 +151,11 @@
             showlistkeranjang()
         }
         var listkeranjang = document.getElementById('listkeranjang')
-    
+
         function showlistkeranjang() {
             listkeranjang.innerHTML = ''
 
-           
+
 
             for (let i = 0; i < namabarang_keranjang.length; i++) {
                 listkeranjang.innerHTML += '<div class="card mt-3 mb-3 bg-dark text-white" style="width: 22rem;">' +
@@ -170,7 +166,7 @@
                     '</div>' +
                     '</div>'
 
-                
+
             }
         }
         showListProduk()
@@ -196,7 +192,7 @@
             var newtab = open('pay.html')
 
         }
-        
+
     </script>
 
     <!-- Optional JavaScript; choose one of the two! -->
