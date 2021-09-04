@@ -104,68 +104,71 @@
     </div>
 
 
-    <div class="container" id="containerHasil" style="margin-top: 0%;">
+    <div class="container d-flex" id="containerHasil" style="margin-top: 0%;flex-wrap: wrap;">
 
-        <script>
-            var namabarang = ['She Who Became the Sun', 'Any Way the Wind Blows', 'Gods & Monsters (Serpent)']
-            var gambarbarang = [
-                'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625048838l/48727813._SY475_.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610744543l/52190991.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612546028l/52535769._SY475_.jpg'
-            ]
+    </div>
 
-            var listproduk = document.getElementById('listproduk')
-            var listkeranjang = document.getElementById('listkeranjang')
 
-            var namabarang_keranjang = []
+    <script>
+        var namabarang = ['She Who Became the Sun', 'Any Way the Wind Blows', 'Gods & Monsters (Serpent)']
+        var gambarbarang = [
+            'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1625048838l/48727813._SY475_.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610744543l/52190991.jpg', 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1612546028l/52535769._SY475_.jpg'
+        ]
 
-            function showListProduk() {
-                listproduk.innerHTML = ''
-                for (let i = 0; i < namabarang.length; i++) {
-                    listproduk.innerHTML += '<div class="card float-right mr-3 mb-3 bg-dark text-white" style="width: 8rem;">' +
-                        '<img src=' + gambarbarang[i] + ' alt="...">' +
-                        ' <div class="card-body">' +
-                        '<h5 class="card-title">' + namabarang[i] + '</h5>' +
-                        ' <a href="#" class="btn btn-primary" onclick="addlistitem(' + i + ')">Pinjam</a>' +
-                        ' </div>' +
-                        ' </div>'
-                }
+        var listproduk = document.getElementById('listproduk')
+        var listkeranjang = document.getElementById('listkeranjang')
+
+        var namabarang_keranjang = [];
+
+
+
+        function showListProduk() {
+            listproduk.innerHTML = ''
+            for (let i = 0; i < namabarang.length; i++) {
+                listproduk.innerHTML += '<div class="card float-right mr-3 mb-3 bg-dark text-white" style="width: 8rem;">' +
+                    '<img src=' + gambarbarang[i] + ' alt="...">' +
+                    ' <div class="card-body">' +
+                    '<h5 class="card-title">' + namabarang[i] + '</h5>' +
+                    ' <a href="#" class="btn btn-primary" onclick="addlistitem(' + i + ')">Pinjam</a>' +
+                    ' </div>' +
+                    ' </div>'
             }
+        }
 
 
-            function addlistitem(id) {
+        function addlistitem(id) {
 
-                namabarang_keranjang.push(namabarang[id])
+            namabarang_keranjang.push(namabarang[id])
 
-                showlistkeranjang()
-            }
-            var listkeranjang = document.getElementById('listkeranjang')
+            showlistkeranjang()
+        }
+        var listkeranjang = document.getElementById('listkeranjang')
 
-            function showlistkeranjang() {
-                listkeranjang.innerHTML = ''
+        function showlistkeranjang() {
+            listkeranjang.innerHTML = ''
 
 
 
-                for (let i = 0; i < namabarang_keranjang.length; i++) {
-                    listkeranjang.innerHTML += '<div class="card mt-3 mb-3 bg-dark text-white" style="width: 22rem;">' +
-                        '<div class="card-body">' +
-                        '<h5 class="card-title">' + namabarang_keranjang[i] + '</h5>' +
-                        '<p>Qty : 1</p>' +
-                        ' <a href="#" class="btn btn-danger float-right" onclick="deleteitem(' + i + ')">Hapus</a>' +
-                        `<button type="button" class="btn btn-primary mt-4 btn-block" data-toggle="modal"
+            for (let i = 0; i < namabarang_keranjang.length; i++) {
+                listkeranjang.innerHTML += '<div class="card mt-3 mb-3 bg-dark text-white" style="width: 22rem;">' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title">' + namabarang_keranjang[i] + '</h5>' +
+                    '<p>Qty : 1</p>' +
+                    ' <a href="#" class="btn btn-danger float-right" onclick="deleteitem(' + i + ')">Hapus</a>' +
+                    `<button type="button" class="btn btn-primary mt-4 btn-block" data-toggle="modal"
                                 data-target="#staticBackdrop" onclick="regis(${i})">
                                 Pinjam
                             </button>`+
-                        '</div>' +
-                        '</div>'
-
-
-                }
+                    '</div>' +
+                    '</div>'
             }
+        }
 
-            function regis() {
-                const modalBody = document.getElementById("modal-body");
+        function regis() {
+            const modalBody = document.getElementById("modal-body");
 
-                modalBody.innerHTML = "";
-                modalBody.innerHTML = `<label for="namapeminjam">Nama Peminjam</label>
+            modalBody.innerHTML = "";
+            modalBody.innerHTML = `<label for="namapeminjam">Nama Peminjam</label>
                                     <input type="teks" class="form-control" id="id_namasiswa"
                                         placeholder="Masukkan Nama Peminjam">
     
@@ -182,61 +185,71 @@
                                     <label for="bataswaktu">Batas Waktu</label>
                                     <input type="date" class="form-control" id="id_bataswaktu">`;
 
-                namabarang_keranjang.forEach((el, ind) => {
-                    const buttonP = document.getElementById("pinjamDong");
-                    buttonP.setAttribute("onclick", `bayar(${ind})`);
-                })
+            namabarang_keranjang.forEach((el, ind) => {
+                const buttonP = document.getElementById("pinjamDong");
+                buttonP.setAttribute("onclick", `bayar(${ind})`);
+            })
 
+        }
 
+        showListProduk()
 
+        function deleteitem(id) {
+            if (confirm("Apakah anda yakin ingin menghapus ini ?")) {
+
+            } else {
+                tetep_ada
             }
 
-            showListProduk()
+            namabarang_keranjang.splice(id, 1)
 
-            function deleteitem(id) {
-                if (confirm("Apakah anda yakin ingin menghapus ini ?")) {
+            showlistkeranjang()
+        }
 
-                } else {
-                    tetep_ada
+        var nama_peminjam = [];
+        var id_peminjam = [];
+        var alamat1 = [];
+        var tgl_peminjaman = [];
+        var batasW = [];
+
+        function bayar(id4) {
+            const nama = document.getElementById("id_namasiswa").value;
+            const id = document.getElementById("id").value;
+            const alamat = document.getElementById("id_alamat").value;
+            const tglpeminjaman = document.getElementById("id_tglpeminjaman").value;
+            const bataswaktu = document.getElementById("id_bataswaktu").value;
+            const containerHasil = document.getElementById("containerHasil");
+
+            if (confirm("Apakah anda yakin ingin meminjam buku ini ?")) {
+                containerHasil;
+                nama_peminjam.push(nama);
+                id_peminjam.push(id);
+                alamat1.push(alamat);
+                tgl_peminjaman.push(tglpeminjaman);
+                batasW.push(bataswaktu)
+
+                console.log(nama_peminjam)
+                containerHasil.innerHTML = '';
+                for (let y = 0; y < nama_peminjam.length; y++) {
+                    containerHasil.innerHTML += `<div class="card" style="width: 18rem;height:50%;margin-left: 10px; mt-4" >
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">Nama Buku : ${namabarang_keranjang[y]}</h5>
+                                                            <p class="card-text">Nama Pemynjam : ${nama_peminjam[y]}</p>
+                                                            <p class="card-text">ID Peminjam : ${id_peminjam[y]}</p>
+                                                            <p class="card-text">Alamat : ${alamat1[y]}</p>
+                                                            <p class="card-text">Tanggal Peminjaman : ${tgl_peminjaman[y]}</p>
+                                                            <p class="card-text">Batas Waktu : ${batasW[y]}</p>
+                                                        </div>
+                                                        </div>`;
                 }
 
-                namabarang_keranjang.splice(id, 1)
-
-                showlistkeranjang()
+            } else {
+                tetep_ada
             }
+        }
 
-            function bayar(id4) {
-                const nama = document.getElementById("id_namasiswa").value;
-                const id = document.getElementById("id").value;
-                const alamat = document.getElementById("id_alamat").value;
-                const tglpeminjaman = document.getElementById("id_tglpeminjaman").value;
-                const bataswaktu = document.getElementById("id_bataswaktu").value;
+    </script>
 
-                if (confirm("Apakah anda yakin ingin meminjam buku ini ? Karena anda hanya bisa meminjam 1 buku.")) {
-
-                } else {
-                    tetep_ada
-                }
-
-
-                const containerHasil = document.getElementById("containerHasil");
-                containerHasil.innerHTML = "";
-                containerHasil.innerHTML = `<div class="card" style="width: 18rem;" >
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Nama Buku : ${namabarang_keranjang[id4]}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-muted">Nama Peminjam : ${nama}</h6>
-                                                    <p class="card-text">ID Peminjam : ${id}</p>
-                                                    <p class="card-text">Alamat : ${alamat}</p>
-                                                    <p class="card-text">Tanggal Peminjaman : ${tglpeminjaman}</p>
-                                                    <p class="card-text">Batas Waktu : ${bataswaktu}</p>
-                                                </div>
-                                                </div>`;
-            }
-
-
-
-        </script>
-    </div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
